@@ -5,6 +5,8 @@ router.use('/api', apiRoutes)
 
 router.use((req, res) => {
     res.status(404).send(
-        '<h2> 404 ERROR </h2> '
-        )
+        '<h2> 404 ERROR </h2>', 
+        '<p> Page not found. </p>')
 })
+
+module.exports = router
