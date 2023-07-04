@@ -10,4 +10,14 @@ app.use(express.static('public'))
 
 app.use(require('./routes'))
 
+mongoose.connect(process.env.MONODB_URI || 'mongodb://localhost/mongogogo', {
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useFindandModify: false
+})
+
+mongoose.set('debug', true)
+
 app.listen(PORT, ()=> console.log(`Connected on localhost:${PORT}`))
+

@@ -1,4 +1,4 @@
-const router = require('express').router()
+const router = require('express').Router()
 const {getAllUsers, getUserById, createUser, updateUser, deleteUser, createFriend, deleteFriend} = require('../../controllers/userControllers')
 
 router.route('/').get(getAllUsers).post(createUser)
